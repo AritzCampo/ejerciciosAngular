@@ -13,7 +13,7 @@ angular.
           "active": false
         },
         {
-          "nombre": "Profesores",
+          "nombre": "Frutas",
           "url": "#!/profesores",
           "active": true
         },
