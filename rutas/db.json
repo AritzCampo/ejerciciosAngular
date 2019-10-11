@@ -1,24 +1,25 @@
 {
-  "tareas": [
+  "frutas":[
     {
-      "completada": true,
-      "descripcion": "filtrar por completadas o No compleatdas",
-      "id": 14
+        "img":"https://supermercado.eroski.es/images/2388676.jpg",
+        "nombre":"Manzana",
+        "color": "verde",
+        "cantidad":1,
+        "precio":2.96
     },
-    {
-      "completada": true,
-      "descripcion": "entender lo que escribooooooooooo",
-      "id": 15
+    {   
+        "img":"https://supermercado.eroski.es/images/17210.jpg",
+        "nombre":"Pera",
+        "color": "verde",
+        "cantidad":1,
+        "precio":1.95
     },
-    {
-      "completada": false,
-      "descripcion": "TODO boton cancelar",
-      "id": 16
-    },
-    {
-      "completada": false,
-      "descripcion": "poner bonito",
-      "id": 17
+    {   
+        "img":"https://supermercado.eroski.es/images/12063319.jpg",
+        "nombre":"Kiwi",
+        "color": "marron",
+        "cantidad":1,
+        "precio":1.93
     }
   ],
   "posts": [
