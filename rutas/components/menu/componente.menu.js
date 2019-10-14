@@ -30,6 +30,12 @@ angular.
           "url": "#!/creditos",
           "active": false,
           "icono": "fab fa-creative-commons"
+        },
+        {
+          "nombre": "Filter, Map, Reduce",
+          "url": "#!/filter",
+          "active": false,
+          "icono": "fab fa-creative-commons"
         }
       ];
       
