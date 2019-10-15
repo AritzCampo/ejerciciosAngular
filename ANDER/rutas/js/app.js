@@ -1,6 +1,19 @@
 var app = angular.module('angularApp',['ngRoute','ngSanitize']);
+/**
+ * constantes
+ */
 
-app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
+ app.constant("servicioConstantes",{
+                                    "titulo":"AngularAPP",
+                                    "idioma":"es - ES",
+                                    "version":"1.0",
+                                    "autor":"Aritz Campo",
+                                    "github":"https://github.com/AritzCampo/ejerciciosAngular"
+                                  });
+
+app.controller('mainCtrl', ['$scope','$http','servicioConstantes', function($scope,$http,servicioConstantes){
+
+
 
   this.$onInit = function(){
 
@@ -10,6 +23,7 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
       "texto" : "Ongi Etorri",
       "clase" : "primary"
     };
+    $scope.constantes = servicioConstantes;
 
 
     // check para saber si esta el servicio rest levantado

@@ -32,8 +32,20 @@ angular.
           "icono": "fas fa-filter"
         },
         {
+          "nombre": "Promesas",
+          "url": "#!/promesas",
+          "active": false,
+          "icono": "fas fa-pray"
+        },
+        {
           "nombre": "Creditos",
           "url": "#!/creditos",
+          "active": false,
+          "icono": "fab fa-creative-commons"
+        },
+        {
+          "nombre": "Sevicios",
+          "url": "#!/servicios",
           "active": false,
           "icono": "fab fa-creative-commons"
         }
