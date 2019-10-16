@@ -1,11 +1,25 @@
-app.controller('serviceController', ['$scope', '$http', '$q', '$timeout', '$log','servicioConstantes',
-                                      function($scope, $http, $q, $timeout,$log,servicioConstantes){
+app.controller('serviceController', ['$scope', 
+                                     '$log', 
+                                     'servicioConstantes', 
+                                     'rectanguloService',
+                                      function($scope,
+                                               $log,
+                                               servicioConstantes,
+                                               rectanguloService){
 
 
     console.trace('serviceController');    
-
-    $scope.titulo = "Servicios " + servicioConstantes.titulo;
     $log.info('serviceController con $log');    
 
+    $scope.titulo = "Servicios" + servicioConstantes.titulo ;
 
+    //declarar esta variable para poder usarlo en HTML
+    $scope.constantes = servicioConstantes;
+
+    // usamos el servicio Rectangulo                                    
+    rectanguloService.setAncho(2);
+    rectanguloService.setAlto(3);
+    $scope.area = rectanguloService.getArea();
+
+    
 }]);

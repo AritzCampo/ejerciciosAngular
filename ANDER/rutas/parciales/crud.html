@@ -1,0 +1,26 @@
+<div ng-controller="crudController" >
+
+     <h2>{{titulo}}</h2>
+
+     <!--{{ canciones | json }}-->
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>   
+            <th scope="col">Acciones</th>         
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cancion in canciones | orderBy:'id'">
+                <th scope="row">{{cancion.id}}</th>
+                <td >{{cancion.nombre}}</td>
+                <td><i class="fas fa-trash-alt" ng-click="CancionProvider.eliminar({{cancion.id}})"></i>   <i class="fas fa-pencil-alt" ng-click="CancionProvider.modificar({{cancion.id}},{{cancion.nombre}})"></i></td>
+            </tr>
+        </tbody>
+    </table>
+          
+       
+
+</div>

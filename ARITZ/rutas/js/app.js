@@ -11,7 +11,37 @@ var app = angular.module('angularApp',['ngRoute','ngSanitize']);
                                     "github":"https://github.com/AritzCampo/ejerciciosAngular"
                                   });
 
-app.controller('mainCtrl', ['$scope','$http','servicioConstantes', function($scope,$http,servicioConstantes){
+/**
+ * servicios
+ */
+//valor inicial
+app.value("tamanyoInicialRectangulo",{
+  ancho:2,
+  alto:3
+});
+
+//clase rectangulo
+function Rectangulo(tamanyoInicial) {
+  this.ancho=tamanyoInicial.ancho;
+  this.alto=tamanyoInicial.alto;
+   
+  this.setAncho=function(ancho) {
+    this.ancho=ancho;
+  }
+   
+  this.setAlto=function(alto) {
+    this.alto=alto;
+  }  
+   
+  this.getArea=function() {
+    return this.ancho * this.alto;
+  }
+}
+
+//definir servicio
+app.service("rectangulo",['tamanyoInicialRectangulo',Rectangulo]);
+
+app.controller('mainCtrl', ['$scope','$http','servicioConstantes','rectangulo', function($scope,$http,servicioConstantes,rectangulo){
 
 
 

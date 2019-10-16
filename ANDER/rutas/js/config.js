@@ -24,10 +24,15 @@ app.config( function( $routeProvider ){
     .when('/funcional',{
       templateUrl: 'parciales/prog-funcional.html'
     })
+    .when('/promesas',{
+      templateUrl: 'parciales/promesas.html'
+    })
     .when('/servicios',{
       templateUrl: 'parciales/servicios.html'
     })
-    
+    .when('/crud',{
+      templateUrl: 'parciales/crud.html'
+    })
     .otherwise({
       redirectTo: '/'
     })
