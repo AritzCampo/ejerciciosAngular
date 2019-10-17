@@ -44,6 +44,12 @@ angular.
           "icono": "fas fa-server"
         },
         {
+          "nombre": "Formulario",
+          "url": "#!/formulario",
+          "active": false,
+          "icono": "fab fa-wpforms"
+        },
+        {
           "nombre": "CRUD",
           "url": "#!/crud",
           "active": false,
@@ -54,12 +60,6 @@ angular.
           "url": "#!/creditos",
           "active": false,
           "icono": "fab fa-creative-commons"
-        },
-        {
-          "nombre": "Formulario",
-          "url": "#!/formulario",
-          "active": false,
-          "icono": "fas fa-align-justify"
         }
         
       ];

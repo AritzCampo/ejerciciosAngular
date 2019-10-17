@@ -1,33 +1,48 @@
 <div ng-controller="crudController" >
 
      <h2>{{titulo}}</h2>
+     <h3 class="text-warning">{{mensaje}}</h3>
 
-     <!--{{ canciones | json }}-->
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>           
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cancion in canciones">
+                        <td scope="row">{{cancion.id}}</td>
+                        <td>{{cancion.nombre}}</td>
+                        <td><i class="fas fa-edit" ng-click="editar(cancion)"></i></td>
+                        <td><i class="fas fa-trash" ng-click="eliminar(cancion)"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /columna 1 -->
 
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>   
-            <th scope="col">Acciones</th>         
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="cancion in canciones | orderBy:'id'">
-                <th scope="row">{{cancion.id}}</th>
-                <td >{{cancion.nombre}}</td>
-                <td><i class="fas fa-trash-alt" ng-click="eliminar(cancion.id)"></i>   
-                    <i class="fas fa-pencil-alt" ng-click="modificar(cancion.id)"></i>
-                    
-                
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <input type="text" ng-model="nombreCancion" autofocus placeholder="nombre cancion" size="40">
-    <button ng-click="crearCancion()" class="btn btn-primary">Nueva Cancion</button>
-    <input type="text" ng-model="nombreNuevo" ng-show="mostrarText" class="ng-hide" placeholder="nombre cancion" size="30">
-    <button ng-click="modificar(cancion.id)" ng-show="mostrarText" class="btn btn-primary">Confirmar</button>
+        <div class="col">
+
+              <input type="text" ng-model="nombre" placeholder="Nombre Cancion">  
+              <button class="btn btn-primary" ng-click="nuevaCancion(nombre)" ng-disabled="nombre.length<3" >Guardar</button>
+              <p ng-hide="nombre.length>=3">Escribe por lo menos 3 caracteres</p>
+
+            <hr>
+               
+              <input type="text" ng-model="cancionEditar.id">  
+              <input type="text" ng-model="cancionEditar.nombre">  
+              <button class="btn btn-primary" ng-click="guardar()" ng-disabled="cancionEditar.nombre.length<3" >Guardar</button>
+              <p ng-hide="cancionEditar.nombre.length>=3">Escribe por lo menos 3 caracteres</p>
+
+        </div>
+        <!-- /columna 2 -->
+    </div>
+
+   
           
        
 
