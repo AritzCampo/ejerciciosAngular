@@ -16,6 +16,9 @@ var app = angular.module('angularApp',['ngRoute','ngSanitize']);
 /**
  *  Providers
  */
+app.service("detallePokemonProvider", detallePokemonProvider );
+app.service("pokemonProvider", PokemonProvider );
+
 
 function CancionProvider($http){
 

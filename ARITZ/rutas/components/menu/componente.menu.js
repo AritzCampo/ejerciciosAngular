@@ -54,6 +54,12 @@ angular.
           "url": "#!/creditos",
           "active": false,
           "icono": "fab fa-creative-commons"
+        },
+        {
+          "nombre": "Pokemon",
+          "url": "#!/pokemon",
+          "active": false,
+          "icono": "fas fa-dragon"
         }
         
       ];

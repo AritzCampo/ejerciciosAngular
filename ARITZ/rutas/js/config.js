@@ -37,6 +37,14 @@ app.config( function( $routeProvider ){
       templateUrl: 'parciales/detalle.html',
       controller: 'detalleController'
     })
+    .when('/pokemon',{
+      templateUrl: 'parciales/pokemon.html',
+      controller: 'pokemonController'
+    })
+    .when('/detallePokemon/:nombre',{
+      templateUrl: 'parciales/detallePokemon.html',
+      controller: 'detallePokemonController'
+    })
     .otherwise({
       redirectTo: '/'
     })

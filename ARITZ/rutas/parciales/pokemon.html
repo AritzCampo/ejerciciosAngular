@@ -1,0 +1,24 @@
+<h2>LISTADO POKEMON</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col">nombre</th>
+        <th scope="col">detalle</th>   
+        <th scope="col">Acciones</th>         
+        </tr>
+    </thead>
+    <tbody>
+            <tr ng-repeat="pokemon in pokemons | orderBy:'id'">
+                    <th scope="row">{{pokemon.name}}</th>
+                    <td >{{pokemon.url}}</td>
+                    <td>
+                        <a ng-href="#!/detallePokemon/{{pokemon.name}}"><i class="fas fa-info-circle"></i>  </a> 
+                        
+                    
+                    </td>
+                </tr>    
+        
+       
+    </tbody>
+</table>
