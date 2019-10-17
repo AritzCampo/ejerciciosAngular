@@ -33,6 +33,10 @@ app.config( function( $routeProvider ){
     .when('/crud',{
       templateUrl: 'parciales/crud.html'
     })
+    .when('/detalle/:id',{
+      templateUrl: 'parciales/detalle.html',
+      controller: 'detalleController'
+    })
     .otherwise({
       redirectTo: '/'
     })
