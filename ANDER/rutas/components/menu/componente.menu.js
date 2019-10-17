@@ -54,6 +54,12 @@ angular.
           "url": "#!/creditos",
           "active": false,
           "icono": "fab fa-creative-commons"
+        },
+        {
+          "nombre": "Formulario",
+          "url": "#!/formulario",
+          "active": false,
+          "icono": "fas fa-align-justify"
         }
         
       ];

@@ -38,55 +38,31 @@ function CancionProvider($http){
   this.eliminar = function( idCancion ){    
     let url = ENDPOINT + idCancion;
     console.log('cancionProvider eliminar ' + url);
-    $http.delete( url ).then(function(response){   
-
-      console.trace('reponse OK data=%o', response);               
-
-  }, function(response){    
-
-      console.warn('Tenemos un ERROR response: %o' , response);
-
-  });
+    return $http.delete( url );
+  };
     
-  }// eliminar
+  // eliminar
 
 
   this.crear = function( nombreCancion ){    
     let url = ENDPOINT;
     console.log('cancionProvider nombreCancion ' + url);
     let cancion = {            
-      "id": "",
+      "id": 0,
       "nombre": nombreCancion
   };
-    $http.post(url, cancion)
-                .then(function(response){   // success antiguo
-
-                    console.trace('reponse OK data=%o', $scope.ENDPOINT, response);
-                   
-
-                }, function(response){    // gestion del error
-
-                    console.warn('Tenemos un ERROR response: %o' , response);
-
-                });
-    
+     return $http.post(url, cancion);
+                
   }// crear
 
   this.modificar = function( idCancion, nombreCancion ){    
     let url = ENDPOINT  + idCancion;
     console.log('cancionProvider modificar %s  id=%s nombre=%s', url, idCancion, nombreCancion );
-    let data = {            
+    let data = {  
+      "id":idCancion,          
       "nombre": nombreCancion
   };
-    $http.put( url , data ).then(function(response){   
-
-      console.trace('reponse OK data=%o', response);               
-
-  }, function(response){    
-
-      console.warn('Tenemos un ERROR response: %o' , response);
-
-  });
+   return $http.put( url , data );
     
   }// modificar
 

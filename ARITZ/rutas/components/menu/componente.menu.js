@@ -38,14 +38,20 @@ angular.
           "icono": "fas fa-pray"
         },
         {
-          "nombre": "Creditos",
-          "url": "#!/creditos",
+          "nombre": "Servicios",
+          "url": "#!/servicios",
           "active": false,
-          "icono": "fab fa-creative-commons"
+          "icono": "fas fa-server"
         },
         {
-          "nombre": "Sevicios",
-          "url": "#!/servicios",
+          "nombre": "CRUD",
+          "url": "#!/crud",
+          "active": false,
+          "icono": "fas fa-music"
+        },
+        {
+          "nombre": "Creditos",
+          "url": "#!/creditos",
           "active": false,
           "icono": "fab fa-creative-commons"
         }

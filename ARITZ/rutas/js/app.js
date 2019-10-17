@@ -1,30 +1,86 @@
 var app = angular.module('angularApp',['ngRoute','ngSanitize']);
-/**
- * constantes
- */
 
- app.constant("servicioConstantes",{
-                                    "titulo":"AngularAPP",
-                                    "idioma":"es - ES",
-                                    "version":"1.0",
-                                    "autor":"Aritz Campo",
-                                    "github":"https://github.com/AritzCampo/ejerciciosAngular"
-                                  });
 
 /**
- * servicios
+ * Servicio para Constantes
  */
-//valor inicial
-app.value("tamanyoInicialRectangulo",{
-  ancho:2,
-  alto:3
-});
 
-//clase rectangulo
-function Rectangulo(tamanyoInicial) {
-  this.ancho=tamanyoInicial.ancho;
-  this.alto=tamanyoInicial.alto;
-   
+ app.constant("servicioConstantes", {
+                                      "titulo": "AngularApp",
+                                      "idioma": "es-Es",
+                                      "version": "26.3.12",
+                                      "autor": "Aritz Campo",
+                                      "github": "https://github.com/AritzCampo/ejerciciosAngular"
+                                    } );
+
+/**
+ *  Providers
+ */
+
+function CancionProvider($http){
+
+  console.log('CancionProvider');
+  const ENDPOINT = "http://localhost:8080/cancion/";
+
+  this.listar = function(){    
+    console.log('cancionProvider listar ' + ENDPOINT);
+    return $http.get(ENDPOINT);
+
+  }// listar
+
+  this.detalle = function( idCancion ){    
+    let url = ENDPOINT + idCancion;
+    console.log('cancionProvider detalle ' + url);
+    return $http.get(url);
+    
+  }// detalle
+
+  this.eliminar = function( idCancion ){    
+    let url = ENDPOINT + idCancion;
+    console.log('cancionProvider eliminar ' + url);
+    return $http.delete( url );
+  };
+    
+  // eliminar
+
+
+  this.crear = function( nombreCancion ){    
+    let url = ENDPOINT;
+    console.log('cancionProvider nombreCancion ' + url);
+    let cancion = {            
+      "id": 0,
+      "nombre": nombreCancion
+  };
+     return $http.post(url, cancion);
+                
+  }// crear
+
+  this.modificar = function( idCancion, nombreCancion ){    
+    let url = ENDPOINT  + idCancion;
+    console.log('cancionProvider modificar %s  id=%s nombre=%s', url, idCancion, nombreCancion );
+    let data = {  
+      "id":idCancion,          
+      "nombre": nombreCancion
+  };
+   return $http.put( url , data );
+    
+  }// modificar
+
+
+}
+
+ app.service("cancionProvider", CancionProvider );
+
+
+/**
+ * Ejemplo Servicio a traves de una Clase
+ */
+
+ // Clase Rectangulo
+ function Rectangulo() {
+  this.ancho=0;
+  this.alto=0;
+ 
   this.setAncho=function(ancho) {
     this.ancho=ancho;
   }
@@ -38,46 +94,7 @@ function Rectangulo(tamanyoInicial) {
   }
 }
 
-//definir servicio
-app.service("rectangulo",['tamanyoInicialRectangulo',Rectangulo]);
-
-app.controller('mainCtrl', ['$scope','$http','servicioConstantes','rectangulo', function($scope,$http,servicioConstantes,rectangulo){
-
-
-
-  this.$onInit = function(){
-
-    console.log('onInit mainCtrl');
-    
-    $scope.alerta = {
-      "texto" : "Ongi Etorri",
-      "clase" : "primary"
-    };
-    $scope.constantes = servicioConstantes;
-
-
-    // check para saber si esta el servicio rest levantado
-    let url = 'http://localhost:3000/frutas';
-    $http.get(url).then(function (result) {
-        console.trace('servicio rest funcionando %o', result);
-        $scope.alerta = {
-          "texto" : "<strong>Yujuuuuu</strong> Esta funcionando Servicio Rest",
-          "clase" : "success"
-        };
-
-
-    }).catch(function (response) {
-        console.warn('servicio rest fallando %o', response);
-        $scope.alerta = {
-          "texto" : "<strong>Upssssss</strong> Servicio Rest parado",
-          "clase" : "danger"
-        };
-    });
-
-    
-
-  }//onInit
-
-}]);
+//definir Servicio
+app.service("rectanguloService",Rectangulo);
 
 
