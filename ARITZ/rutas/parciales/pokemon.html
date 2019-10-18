@@ -3,22 +3,29 @@
 <table class="table">
     <thead class="thead-dark">
         <tr>
-        <th scope="col">nombre</th>
-        <th scope="col">detalle</th>   
-        <th scope="col">Acciones</th>         
+            <th scope="col">nombre</th>
+            <th scope="col">Experiencia</th>
+            <th scope="col">Altura</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Habilidades</th>
+            <th scope="col">Movimientos</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
-            <tr ng-repeat="pokemon in pokemons | orderBy:'id'">
-                    <th scope="row">{{pokemon.name}}</th>
-                    <td >{{pokemon.url}}</td>
-                    <td>
-                        <a ng-href="#!/detallePokemon/{{pokemon.name}}"><i class="fas fa-info-circle"></i>  </a> 
-                        
-                    
-                    </td>
-                </tr>    
-        
-       
+        <tr ng-repeat="pokemon in detallePokemon | orderBy:'id'">
+            <th scope="row">{{pokemon.name}}</th>
+            <td>{{pokemon.base_experience}}</td>
+            <td>{{pokemon.height}}</td>
+            <td>{{pokemon.weight}}</td>
+            <td>{{pokemon.abilities.length}}</td>
+            <td>{{pokemon.moves.length}}</td>
+            <td>
+                <a ng-href="#!/detallePokemon/{{pokemon.name}}"><i class="fas fa-info-circle"></i> </a>
+
+            </td>
+        </tr>
+
+
     </tbody>
 </table>

@@ -16,7 +16,7 @@ var app = angular.module('angularApp',['ngRoute','ngSanitize']);
 /**
  *  Providers
  */
-app.service("detallePokemonProvider", detallePokemonProvider );
+
 app.service("pokemonProvider", PokemonProvider );
 
 
@@ -99,5 +99,18 @@ function CancionProvider($http){
 
 //definir Servicio
 app.service("rectanguloService",Rectangulo);
+
+/** filtro personalizado para capitalizar la primera letra de un string */
+/*app.filter("capitalizar", function (){
+  return function(cadena){
+  if (cadena != undefined && typeof cadena == 'string'){
+    return cadena.charAt(0).toUpperCase() + cadena.slice(1);
+
+  }else{
+    return "";
+  }
+  }*/
+  //definir filtro en app
+  
 
 
