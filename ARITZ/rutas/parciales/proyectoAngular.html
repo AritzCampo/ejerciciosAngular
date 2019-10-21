@@ -1,0 +1,39 @@
+
+
+    <h1>{{"Welcome to the angular" | uppercase}}</h1>
+    <div class="container">
+        <h2>filtros (TODO)</h2>
+
+
+        <h2>DIRECTIVA ng model</h2>
+
+        Su nombre: {{nombre | uppercase}}
+        <br>
+        <input type="text" ng-model="nombre" placeholder="dime tu nombre" class="form-control">
+
+        seleccione el pais {{ pais }}
+        <br>
+        <select class="form-conrtol" ng-model="pais">
+            <option value="1">Costa Rica</option>
+            <option value="2">Mexico</option>
+            <option value="3">Colombia</option>
+        </select>
+
+        <br>
+        <p>
+            Tus Gustos: g1: {{g1}} g2: {{g2}} g3: {{g3}} g4: {{g4}}
+            <br>
+            <input type="checkbox" ng-model="g1">Musica <br>
+            <input type="checkbox" ng-model="g2">Bromas <br>
+            <input type="checkbox" ng-model="g3">Caidas <br>
+            <input type="checkbox" ng-model="g4">surf <br>
+        </p>
+       
+
+
+        <input type="text" ng-model="2" placeholder="nombre" class="form-control">
+
+
+
+    </div>
+

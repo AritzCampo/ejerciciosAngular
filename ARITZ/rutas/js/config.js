@@ -45,6 +45,30 @@ app.config( function( $routeProvider ){
       templateUrl: 'parciales/detallePokemon.html',
       controller: 'pokemonController'
     })
+    .when('/proyectoAngular',{
+      templateUrl: 'parciales/proyectoAngular.html'
+    })
+    .when('/evaluacion',{
+      templateUrl: 'parciales/evaluacion.html'
+    })
+    .when('/ejercicioComponentes',{
+      templateUrl: 'parciales/ejercicioComponentes.html'
+    })
+    .when('/profesores',{
+      templateUrl: 'parciales/profesores.html'
+    })
+    .when('/profesor',{
+      templateUrl: 'parciales/ejercicio2.html'
+    })
+    .when('/video',{
+      templateUrl: 'parciales/ejercicio3.html'
+    })
+    .when('/frutas',{
+      templateUrl: 'parciales/ejercicio4.html'
+    })
+    .when('/tutifruti',{
+      templateUrl: 'parciales/tutifruti.html'
+    })
     .otherwise({
       redirectTo: '/'
     })

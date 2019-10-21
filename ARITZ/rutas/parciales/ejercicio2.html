@@ -1,0 +1,55 @@
+    <main class="container">
+        <h1>EJERCICIO CONTROLADOR Profesor</h1>
+        <div ng-controller="profesorController as pc">
+
+            <h4> {{profesor.nombre}}</h4>
+            <hr>
+
+            <div class="row">
+
+                <!-- Div que contiene la imagen del profesor -->
+                <div class="col-sm-3">
+                    <section class="panel">
+                        <div class="panel-body" align="center">
+                            <img ng-src="{{profesor.foto}}" class="rounded-circle" alt="" width="150px" height="150px">
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Div, donde se mostrará la bio del profesor -->
+                <div class="col-sm-9">
+                    <section class="panel">
+                        <div class="panel-body">
+                            {{profesor.bio}}
+                            <br>
+                            <br>
+                            <strong>Edad:</strong> {{profesor.edad}} años
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <input type="button" ng-click="editar()" class="btn btn-primary form-control" value="EDITAR">
+            <input type="button" ng-click="cancelar()" class="btn btn-danger form-control" value="CANCELAR">
+            <input type="button" ng-click="guardar()" class="btn btn-success form-control" value="GUARDAR">
+
+            <div class="row {{animacion}}" ng-show="mostrarCaja">
+                nombre: <br>
+                <input type="text" class="form-control" ng-model="editando.nombre">
+                <br>
+                BIO: <br>
+                <input type="text" class="form-control" ng-model="editando.bio">
+                <br>
+                edad: <br>
+                <input type="text" class="form-control" ng-model="editando.edad">
+            </div>
+        </div> <!-- end profesor controller-->
+        <br><br>
+
+
+        
+        <hr>
+        
+
+
+    </main>

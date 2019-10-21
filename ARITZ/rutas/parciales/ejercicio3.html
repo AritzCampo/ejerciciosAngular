@@ -1,0 +1,23 @@
+<div ng-controller="videoController as vc">
+    <br>
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="https://www.youtube.com/watch?v={{video.codigo}}">
+                <img class="float-center mr-3" ng-src="https://img.youtube.com/vi/{{video.codigo}}/default.jpg"
+                    alt="Imagen destacda del video {{video.nombre}}" /></a>
+
+        </div>
+        <div class="col-sm-9">
+
+            <a href="https://www.youtube.com/watch?v={{video.codigo}}">
+                <p class="h3 text-justify">{{video.nombre}}</p>
+            </a>
+
+        </div>
+    </div>
+    <p class="btn-like {{animacion}}"" ng-click=" sumarClick()"><i class="far fa-heart btn-"></i>
+        {{video.likes}} LIKES
+    </p>
+</div>

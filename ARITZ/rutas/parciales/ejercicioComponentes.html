@@ -1,0 +1,54 @@
+
+    <div class="container">
+        <h1>Ejercicio Componentes</h1>
+
+        <a href="https://docs.angularjs.org/guide/component" target="_blank">Documentacion oficial componentes</a><br>
+        <a href="https://docs.angularjs.org/tutorial/step_03" target="_blank">Tutorial oficial componentes</a>
+        <hr>
+        <p>Nuestro primer componente</p>
+
+        <saludo-usuario></saludo-usuario>
+        <hr>
+        <hr>
+        <h2>Nuestro segundo componente con con template para el HTML</h2>
+        <componente-botonMundo></componente-botonMundo><br><br>
+        <hr>
+        <hr>
+        <p>Nuestro tercer componente, llamado varias veces con parametros</p><br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ASIGNATURA</th>
+                    <th scope="col">CALIFICACION</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">HTML</th>
+                    <td><componente-calificacion pnota="5"></componente-calificacion></td>
+                    </tr>
+                  <tr>
+                    <th scope="row">CSS</th>
+                    <td><componente-calificacion pnota="2"></componente-calificacion></td>
+                </tr>
+                  <tr>
+                    <th scope="row">JS</th>
+                    <td><componente-calificacion pnota="10"></componente-calificacion></td>
+                    </tr>
+                </tr>
+                <tr>
+                  <th scope="row">ANGULARJS</th>
+                  <td><componente-calificacion pnota="6"></componente-calificacion></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <hr>
+
+<h2>TELEFONOS</h2>
+<br><br>
+<phone-list></phone-list>
+
+    </div>
+
