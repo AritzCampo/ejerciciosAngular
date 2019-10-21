@@ -3,7 +3,7 @@
 Proyecto implementado en Angularjs con todos los ejercicios realizados integrados en una sola aplicacion
 
 
-![Alt text](https://github.com/AritzCampo/ejerciciosAngular/blob/tree/master/img/pantallazo.png)
+![pantallazo](https://user-images.githubusercontent.com/51588036/67201247-276dd000-f406-11e9-9fc0-991756128bf4.png)
 
 ## Entorno
 En la Home se ve un listado de los ejercicios iniciales, de mas sencillos a mas complicados.
